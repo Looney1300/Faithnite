@@ -54,7 +54,7 @@ let player = {
 
 function addPoints(points){
     player.points += points;
-    if (player.points > levels[player.level + 1].points){
+    if (player.points >= levels[player.level + 1].points){
         ++player.level;
     }
     refresh();
@@ -69,13 +69,22 @@ function setClassTextTo(className, value){
 }
 
 function setSkills(){
-    let curClassList = document.getElementsByClassName('skills');
+    let curClassList = document.getElementsByClassName('skill');
     for (let i=0; i<curClassList.length; ++i){
-        if (curClassList[i].value > player.level){
-            curClassList[i].classList.toggle('overlay');
-            curClassList[i].getElementsByClassName('btn')[0].classList.toggle('disabled');
+        if (curClassList[i].getElementsByClassName('levelAvailable')[0].innerText > player.level){
+            curClassList[i].classList.add('overlay');
+            curClassList[i].getElementsByClassName('btn')[0].classList.add('disabled');
+        }
+        else {
+            curClassList[i].classList.remove('overlay');
+            curClassList[i].getElementsByClassName('btn')[0].classList.remove('disabled');
         }
     }
+}
+
+function updateLevelProgress(){
+    let width = 1 - (levels[player.level + 1].points - player.points)/(levels[player.level + 1].points - levels[player.level].points);
+    document.getElementById('levelProgress').style.width = `${width*100}%`;
 }
 
 function refresh(){
@@ -85,6 +94,7 @@ function refresh(){
     setClassTextTo('totalPoints', player.points);
     setClassTextTo('playerName', player.name);
     setSkills();
+    updateLevelProgress();
 }
 
 refresh();
