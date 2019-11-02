@@ -1,0 +1,39 @@
+body {
+    background-color: rgba(0,0,0,.8);
+}
+
+#main {
+    margin-top: 40px;
+}
+
+.sticky-top {
+	top: 70px;
+}
+
+.bg-custom {
+    background-color: rgba(0,0,0,.9);
+}
+
+.card {
+    background-color:rgba(0,0,0,.1);
+    color: white;
+    margin: 10px;
+}
+
+#nextLevelNav, #nextLevelNav .card-body {
+    padding: 0;
+    margin: 0;
+    font-size: small;
+    min-width: 160px;
+}
+
+nav {
+    justify-content: space-between;
+}
+
+.overlay {
+    display: block;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
