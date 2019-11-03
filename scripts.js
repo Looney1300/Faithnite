@@ -51,11 +51,13 @@ let player = {
     points: 0
 };
 
+let levelUpSound = new Audio('assets/Gleam-sound-effect.mp3');
 
 function addPoints(points){
     player.points += points;
     if (player.points >= levels[player.level + 1].points){
         ++player.level;
+        levelUpSound.play();
     }
     refresh();
 }
@@ -98,4 +100,7 @@ function refresh(){
     updateLevelProgress();
 }
 
-refresh();
+function getName(){
+    player.name = prompt("What do you want to be called?");
+    refresh();
+}

@@ -39,7 +39,15 @@ body {
 }
 
 nav {
-    justify-content: space-between;
+    justify-content: space-between !important;
+}
+
+#playerStats {
+    background-color: rgba(255,255,255,.25);
+}
+
+#playerStats .info {
+    font-size: x-large;
 }
 
 .overlay {
@@ -50,3 +58,12 @@ nav {
 .progress {
     background-color: rgba(255,255,255,.5);
 }
+
+.col {
+    min-width: 220px;
+}
+
+.currentLevel, .totalPoints {
+    text-shadow: 0 0 5px #002241;
+}
+
