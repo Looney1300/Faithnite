@@ -27,7 +27,7 @@
                 
                 <div id="nextLevelNav" class="card" class="col-sm">
                     <div class="card-body">
-                        <h5 class="card-title">Next: lvl<span class="nextLevel"></span> - <span class="nextLevelPoints"></span></h5>
+                        <h5 class="card-title">Next Lvl: <span class="nextLevel"></span> @ <span class="nextLevelPoints"></span> pts</h5>
                         <div class="progress">
                             <div id="levelProgress" class="progress-bar progress-bar-striped progress-bar-animated" 
                             role="progressbar" aria-valuemin="0" aria-valuemax="100">
@@ -44,8 +44,11 @@
 
         <div id="main" class="container">
             <div class="card" class="col-sm">
+                <div class="card-header">
+                    Player Stats
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title"><span class="playerName"></span> </h5>
+                    <h5 class="card-title"><span class="playerName"></span> - <span class="levelName"></span></h5>
                     <p class="card-text">
                         <ul>
                             <li>Lvl <span class="currentLevel"></span></li>
@@ -54,27 +57,64 @@
                     </p>
                 </div>
             </div>
-
-            <div class="card skill" style="width: 18rem;">
-                <!-- <img src="..." class="card-img-top" alt="..."> -->
-                <div class="card-body">
-                    <p>Available at Level <span class="levelAvailable">0</span></p>
-                    <h5 class="card-title">Scripture Strength</h5>
-                    <p class="card-text">Read a scripture in class.</p>
-                    <a class="btn btn-primary" onclick="addPoints(10)">Add 10 Points</a>
+            
+            
+            <div id="skills" class="row">
+            
+                <div class="card skill" style="width: 18rem;">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <p>Available at Level <span class="levelAvailable">0</span></p>
+                        <h5 class="card-title">Scripture Strength</h5>
+                        <p class="card-text">Read a scripture during class.</p>
+                        <a class="btn btn-primary" onclick="addPoints(10)">Add 10 Points</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card skill" style="width: 18rem;">
-                <!-- <img src="..." class="card-img-top" alt="..."> -->
-                <div class="card-body">
-                    <p>Available at Level <span class="levelAvailable">2</span></p>
-                    <h5 class="card-title">Prepared Points</h5>
-                    <p class="card-text">Bring a scripture to the start of class and expound on it.</p>
-                    <a class="btn btn-primary" onclick="addPoints(100)">Add 100 Points</a>
+
+                <div class="card skill" style="width: 18rem;">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <p>Available at Level <span class="levelAvailable">1</span></p>
+                        <h5 class="card-title">Expound Scriptures</h5>
+                        <p class="card-text">Expound a scripture during class after reading it.</p>
+                        <a class="btn btn-primary" onclick="addPoints(10)">Add 10 Points</a>
+                    </div>
                 </div>
-            </div>
 
+                <div class="card skill" style="width: 18rem;">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <p>Available at Level <span class="levelAvailable">1</span></p>
+                        <h5 class="card-title">Class XP</h5>
+                        <p class="card-text">Fulfill expectations through reverence, attention, and respect.</p>
+                        <a class="btn btn-primary" onclick="addPoints(50)">Add 50 Points</a>
+                    </div>
+                </div>
+
+                <div class="card skill" style="width: 18rem;">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <p>Available at Level <span class="levelAvailable">2</span></p>
+                        <h5 class="card-title">Offer Contributions</h5>
+                        <p class="card-text">Volunteer to read or expound a scripture.</p>
+                        <a class="btn btn-primary" onclick="addPoints(15)">Add 15 Points</a>
+                    </div>
+                </div>
+
+
+
+                <div class="card skill" style="width: 18rem;">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <p>Available at Level <span class="levelAvailable">5</span></p>
+                        <h5 class="card-title">Prepared Points</h5>
+                        <p class="card-text">Bring a scripture to the start of class and expound on it.</p>
+                        <a class="btn btn-primary" onclick="addPoints(100)">Add 100 Points</a>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
 

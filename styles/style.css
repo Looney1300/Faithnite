@@ -11,13 +11,18 @@ body {
 }
 
 .bg-custom {
-    background-color: rgba(0,0,0,.9);
+    background-color: rgba(0,0,0,.8);
 }
 
 .card {
-    background-color:rgba(0,0,0,.1);
+    background-color:rgba(255,255,255,.1);
     color: white;
     margin: 10px;
+}
+
+.card-header {
+    font-size: x-small;
+    text-align: right;
 }
 
 #nextLevelNav, #nextLevelNav .card-body {
@@ -25,6 +30,12 @@ body {
     margin: 0;
     font-size: small;
     min-width: 160px;
+    background-color: rgba(0,0,0,0);
+}
+
+#nextLevelNav .card-title {
+    font-size: small;
+    text-align: right;
 }
 
 nav {
@@ -36,3 +47,6 @@ nav {
     color: rgba(200,200,200)
 }
 
+.progress {
+    background-color: rgba(255,255,255,.5);
+}

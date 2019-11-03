@@ -93,6 +93,7 @@ function refresh(){
     setClassTextTo('nextLevelPoints', levels[player.level + 1].points);
     setClassTextTo('totalPoints', player.points);
     setClassTextTo('playerName', player.name);
+    setClassTextTo('levelName', levels[player.level].name);
     setSkills();
     updateLevelProgress();
 }
