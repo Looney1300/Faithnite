@@ -52,14 +52,32 @@ let player = {
 };
 
 let levelUpSound = new Audio('assets/Gleam-sound-effect.mp3');
+let addPointsSound = new Audio('assets/Coin-drop-on-coins.mp3');
 
-function addPoints(points){
+function saveState(){
+    localStorage.setItem('player', JSON.stringify(player));
+}
+
+function getState(){
+    let savedPlayer = JSON.parse(localStorage.getItem('player'));
+    if (savedPlayer){
+        player = savedPlayer;
+    }
+}
+
+function addPoints(btn, points){
+    addPointsSound.play();
     player.points += points;
     if (player.points >= levels[player.level + 1].points){
         ++player.level;
         levelUpSound.play();
     }
     refresh();
+
+    btn.classList.add('disabled');
+    setTimeout(function(){
+        btn.classList.remove('disabled');
+    }, 500);
 }
 
 // The following will set the innerText value of all members of the specified class to the specified value.
@@ -76,6 +94,10 @@ function setSkills(){
         if (curClassList[i].getElementsByClassName('levelAvailable')[0].innerText > player.level){
             curClassList[i].classList.add('overlay');
             curClassList[i].getElementsByClassName('btn')[0].classList.add('disabled');
+        }
+        else if (curClassList[i].getElementsByClassName('btn')[0].classList.contains('disabled') &&
+                    !curClassList[i].classList.contains('overlay')) {
+            continue;
         }
         else {
             curClassList[i].classList.remove('overlay');
@@ -98,9 +120,16 @@ function refresh(){
     setClassTextTo('levelName', levels[player.level].name);
     setSkills();
     updateLevelProgress();
+    
+    saveState();
 }
 
-function getName(){
-    player.name = prompt("What do you want to be called?");
+function pageStart(){
+    if (!player.name || player.name == "Nephi"){
+        player.name = prompt("What do you want to be called?");
+    }
     refresh();
 }
+
+getState();
+

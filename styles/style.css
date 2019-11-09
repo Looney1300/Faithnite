@@ -67,3 +67,13 @@ nav {
     text-shadow: 0 0 5px #002241;
 }
 
+.skill img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 80px;
+    max-height: 80px;
+    width: 20%;
+    margin: 5px;
+}
+
