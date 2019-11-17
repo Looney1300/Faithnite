@@ -47,7 +47,7 @@ let levels = [
 
 let player = {
     level: 0,
-    name: 'Nephi',
+    name: '',
     points: 0
 };
 
@@ -125,7 +125,7 @@ function refresh(){
 }
 
 function pageStart(){
-    if (!player.name || player.name == "Nephi"){
+    if (!player.name){
         player.name = prompt("What do you want to be called?");
     }
     refresh();
