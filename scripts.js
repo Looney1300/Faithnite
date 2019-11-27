@@ -68,9 +68,9 @@ function getState(){
 function addPoints(btn, points){
     addPointsSound.play();
     player.points += points;
-    if (player.points >= levels[player.level + 1].points){
+    while (player.points >= levels[player.level + 1].points){
         ++player.level;
-        levelUpSound.play();
+        levelUpSound.play(); //Because of the nature of these sound elements, if you level up past two levels, you'll get the sound only once.
     }
     refresh();
 
@@ -129,6 +129,11 @@ function pageStart(){
         player.name = prompt("What do you want to be called?");
     }
     refresh();
+}
+
+function resetGame(){
+    localStorage.clear();
+    window.location.reload();
 }
 
 getState();
